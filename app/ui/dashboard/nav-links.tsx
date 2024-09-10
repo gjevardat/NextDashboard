@@ -25,6 +25,12 @@ const links = [
     href: '/dashboard/charts',
     icon: DocumentDuplicateIcon,
   },
+
+  {
+    name: 'Runs',
+    href: '/dashboard/runs',
+    icon: DocumentDuplicateIcon,
+  },
 ];
 
 export default function NavLinks() {

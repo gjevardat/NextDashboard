@@ -6,7 +6,8 @@ const conn = new Pool({
   password: '!jevardat_local!',
   host: 'localhost',
   port: 55434,
-  database: 'surveys'
+  database: 'surveys',
+
 });
 
 
