@@ -43,7 +43,7 @@ export default function Page() {
                         {selectedRun && <SourceResultId onSourceSelect={setSelectedSource} run={selectedRun} />}
                     </div>
                     <div>
-                        {selectedRun && <Operators/>}
+                        {selectedRun && <Operators run={selectedRun}/>}
                     </div>
                 </div>
 

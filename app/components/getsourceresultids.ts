@@ -16,10 +16,5 @@ export function getSourcesResultIds( {pageSize, pageIndex,runid} ) {
         isLoading,
         isError: error
     }
-    
-    
-    
-    
 
-    
 }

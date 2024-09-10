@@ -46,12 +46,26 @@ export async function getSourceResultsId(runid: Number, offset : Number, size: N
       `select sourceid from dr4_ops_cs48.sourceresult where runid = $1 order by 1 limit $2 offset $3`,
       [runid, size, offset]
     );
-    console.log(data)
+    
     return data.rows; // Return the actual data
   } catch (err) {
     throw new Error('Failed to load data');
   }
+}
+  export async function getTimeSeriesResultTypes(runid: Number) {
 
+
+    try {
+      
+      const data = await pool.query(
+        `select tag, bandpass, domain  from timeseriesresulttype where run_runid = $1`,
+        [runid]
+      );
+      
+      return data.rows; // Return the actual data
+    } catch (err) {
+      throw new Error('Failed to load data');
+    }
 
 }
 

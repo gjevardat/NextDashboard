@@ -4,13 +4,22 @@ import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import Checkbox from '@mui/material/Checkbox';
 import ListItemText from '@mui/material/ListItemText';
+import { getTimeSeriesResultTypes } from '@/app/lib/data';
 
-export default function Operators()  {
+interface run {
+    runid: number,
+    runname: string  
+}
+
+
+export default function Operators({run} : {run:run})  {
   // Define the initial items and state for checked items
   const [checked, setChecked] = useState<number[]>([]);
 
   // Define the list items
   const items = ['Item 1', 'Item 2', 'Item 3', 'Item 4'];
+
+  const data =  getTimeSeriesResultTypes(run.runid)
 
   // Handle toggle event
   const handleToggle = (index: number) => {
