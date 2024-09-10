@@ -1,3 +1,5 @@
+
+
 import React, { useState } from 'react';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -16,10 +18,22 @@ export default function Operators({run} : {run:run})  {
   // Define the initial items and state for checked items
   const [checked, setChecked] = useState<number[]>([]);
 
-  // Define the list items
-  const items = ['Item 1', 'Item 2', 'Item 3', 'Item 4'];
 
-  const data =  getTimeSeriesResultTypes(run.runid)
+  console.log("run is"+run)
+  const data =  getTimeSeriesResultTypes(Number(run))
+  let myArray: any[] = [];
+
+  if(! data) return 
+  data.then(resolvedData => {
+    myArray = resolvedData
+    
+    myArray.map(item=> {console.log(item.tag)})
+    
+  });
+
+  const items: string[] = myArray.map(item => String(item.tag));
+  
+  //const items = ['Item 1', 'Item 2', 'Item 3', 'Item 4'];
 
   // Handle toggle event
   const handleToggle = (index: number) => {
@@ -34,7 +48,7 @@ export default function Operators({run} : {run:run})  {
 
     setChecked(newChecked); // Update the state
   };
-
+ 
   return (
     <List>
       {items.map((item, index) => {

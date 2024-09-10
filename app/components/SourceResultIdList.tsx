@@ -27,6 +27,9 @@ export function SourceResultId({ onSourceSelect, run }: { onSourceSelect: (sourc
     const [rowSelectionModel, setRowSelectionModel] = React.useState<GridRowSelectionModel>([]);
     const { sourceresultids, isLoading, error } = getSourcesResultIds({ pageSize: paginationModel.pageSize, pageIndex: paginationModel.page, runid: run })
 
+    run && console.log("run is"+run)
+
+
     if (error) return <p>error</p>
     if (!sourceresultids) return <p>Loading</p>
 

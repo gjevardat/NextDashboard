@@ -61,7 +61,7 @@ export async function getSourceResultsId(runid: Number, offset : Number, size: N
         `select tag, bandpass, domain  from timeseriesresulttype where run_runid = $1`,
         [runid]
       );
-      
+      console.log("data"+data.rows)
       return data.rows; // Return the actual data
     } catch (err) {
       throw new Error('Failed to load data');

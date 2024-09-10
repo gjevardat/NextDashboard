@@ -52,7 +52,6 @@ export default function Page() {
                     {selectedSource && Number(selectedSource) != 0 && <TimeSeries sourceId={Number(selectedSource)} />}
                 </div>
             </div>
-            {selectedSource && <p> sourceId={selectedSource}</p>}
         </div>
     )
 }
